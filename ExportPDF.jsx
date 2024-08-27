@@ -3,7 +3,7 @@
 // Função para abrir todos os arquivos de uma pasta
 function openFilesInFolder(folderPath) {
     var folder = new Folder(folderPath);
-    var files = folder.getFiles("*.indd"); // Considerando arquivos .indd, ajuste conforme necessário
+    var files = folder.getFiles("*.jpg"); // Considerando arquivos .indd, ajuste conforme necessário
 
     if (files.length == 0) {
         alert("Nenhum arquivo encontrado na pasta especificada.");
