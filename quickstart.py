@@ -51,10 +51,10 @@ def execute_indesign_script(input_folder, output_folder):
     pass
 
 # Função para apagar as pastas que não sejam a de output
-'''def clean_folders(input_folder, output_folder):
+def clean_folders(input_folder, output_folder):
     for item in Path(input_folder).iterdir():
         if item.is_dir() and item != output_folder:
-            shutil.rmtree(item)'''
+            shutil.rmtree(item)
 
 # Main
 if __name__ == "__main__":
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     organize_files(files, output_folder)
 
     # Etapa 5: Executar o script do InDesign
-    #execute_indesign_script(input_folder, output_folder)
+    execute_indesign_script(input_folder, output_folder)
 
     # Etapa 6: Apagar as pastas que não sejam a de output
-    #clean_folders(input_folder, output_folder)
+    clean_folders(input_folder, output_folder)

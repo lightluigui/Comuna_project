@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, messagebox
+import subprocess
 
 # Funções existentes
 def scan_folder(input_folder):
@@ -37,8 +38,26 @@ def organize_files(files, output_folder):
 def create_output_folder(output_folder):
     Path(output_folder).mkdir(parents=True, exist_ok=True)
 
+
 def execute_indesign_script(input_folder, output_folder):
-    pass
+    # Caminho para o script JavaScript do InDesign
+    indesign_script_path = "C:/Users/Matheus/Documents/comuna"
+    # Caminho para o executável do InDesign (mude conforme seu sistema operacional e instalação)
+    indesign_path = "C:/Program Files/Adobe/Adobe InDesign 2024/InDesign.exe"
+
+    # Comando para executar o script
+    command = [
+        indesign_path,
+        "-run",
+        indesign_script_path
+    ]
+
+    try:
+        # Executa o comando
+        subprocess.run(command, check=True)
+        print("Script do InDesign executado com sucesso!")
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao executar o script do InDesign: {e}")
 
 def clean_folders(input_folder, output_folder):
     for item in Path(input_folder).iterdir():
